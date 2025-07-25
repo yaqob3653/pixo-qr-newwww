@@ -1,0 +1,85 @@
+/* ==========================================================================
+   1. إعدادات أساسية وتحسينات عامة (Global Styles & Resets)
+   ========================================================================== */
+
+/*
+ * استخدام box-sizing: border-box يجعل التعامل مع الأحجام أسهل.
+ * هذا الكود آمن تمامًا ولا يؤثر على الأداء.
+ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* ✅ تحسين الخلفية: تدرج لوني خفيف جدًا وأنيق */
+  background-color: #fefcf3; /* لون أساسي في حال لم يعمل التدرج */
+  background-image: linear-gradient(to top, #fefcf3 0%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   2. أنماط مخصصة لموقع PixoQR (أضف لمساتك الاحترافية هنا)
+   ========================================================================== */
+
+/* * ✅ تعزيز المربع الرئيسي (الظل الاحترافي)
+ * ⚠️ ملاحظة: استبدل .main-card-class بالاسم الحقيقي للكلاس
+ * المستخدم في المربع الرئيسي لأداة إنشاء الرمز في مشروعك.
+ */
+.main-card-class {
+  background-color: white;
+  border-radius: 1rem; /* حواف دائرية جميلة */
+  padding: 2rem;
+  /* ظل احترافي وناعم لا يؤثر على الأداء */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* حركة بسيطة عند مرور الماوس فوق المربع الرئيسي */
+.main-card-class:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.07), 0 10px 15px -8px rgba(0, 0, 0, 0.07);
+}
+
+
+/* * ✅ إضافة حركة أنيقة للزر الرئيسي
+ * ⚠️ ملاحظة: استبدل .generate-button-class بالاسم الحقيقي للكلاس
+ * المستخدم في زر "إنشاء الرمز" في مشروعك.
+ */
+.generate-button-class {
+  /* حركة انتقالية ناعمة لكل الخصائص */
+  transition: all 0.2s ease-in-out;
+}
+
+.generate-button-class:hover {
+  /* يرتفع الزر قليلاً للأعلى عند مرور الماوس */
+  transform: translateY(-3px);
+  /* إضافة توهج خفيف للزر (يعتمد على وجود متغير --primary-glow) */
+  box-shadow: 0 4px 15px rgba(var(--primary-glow), 0.3);
+}
+
+
+/*
+ * ✅ حركة ظهور أنيقة لرمز الـ QR عند إنشائه
+ * ⚠️ ملاحظة: ستحتاج لإضافة كلاس "qr-visible" لرمز الـ QR
+ * عندما يتم إنشاؤه باستخدام الجافاسكريبت.
+ */
+.qr-code-container {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.qr-code-container.qr-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* * حذف الأنماط القديمة غير المستخدمة
+ * تم حذف كود .logo و .card و .read-the-docs القديم لأنه
+ * خاص بالقالب الافتراضي وليس جزءًا من تصميمك.
+ */
